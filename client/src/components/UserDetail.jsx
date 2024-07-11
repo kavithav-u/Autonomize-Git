@@ -6,13 +6,15 @@ import './UserDetails.css';
 
 function UserDetail({ user }) {
   const [repos, setRepos] = useState([]);
+  const token = process.env.REACT_APP_GITHUB_TOKEN;
+
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
         const response = await axios.get(`https://api.github.com/users/${user.username}/repos`, {
           headers: {
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ${token}`,
           },
         });
         setRepos(response.data);

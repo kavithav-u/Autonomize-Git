@@ -5,6 +5,7 @@ import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import UserDetail from './components/UserDetail';
 import FollowersList from './components/FollowersList';
 import FollowerRepositoryList from './components/FollowerRepositoryList';
+import './App.css'; // Ensure you have a CSS file for App styling
 
 function App() {
   const [username, setUsername] = useState('');
@@ -26,32 +27,34 @@ function App() {
 
   return (
     <Router>
-      <div>
-        {shouldShowSearchInput && (
-          <>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter GitHub username"
-            />
-            <button onClick={handleSearch}>Search</button>
-          </>
-        )}
-        {status === 'loading' && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {user && (
-          <>
-            <Routes>
-              <Route path="/" element={<UserDetail user={user} />} />
-              <Route path="/followers/:username" element={<FollowersList />} />
-              <Route path="/follower-repositories/:followerUsername" element={<FollowerRepositoryList />} />
-            </Routes>
-            <Link to={`/followers/${user.username}`} className="followers-button">
-              View Followers
-            </Link>
-          </>
-        )}
+      <div className="app-container">
+        <div className="centered-content">
+          {shouldShowSearchInput && (
+            <>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Enter GitHub username"
+              />
+              <button onClick={handleSearch}>Search</button>
+            </>
+          )}
+          {status === 'loading' && <p>Loading...</p>}
+          {error && <p>Error: {error}</p>}
+          {user && (
+            <>
+              <Routes>
+                <Route path="/" element={<UserDetail user={user} />} />
+                <Route path="/followers/:username" element={<FollowersList />} />
+                <Route path="/follower-repositories/:followerUsername" element={<FollowerRepositoryList />} />
+              </Routes>
+              <Link to={`/followers/${user.username}`} className="followers-button">
+                View Followers
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </Router>
   );

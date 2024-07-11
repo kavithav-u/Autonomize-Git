@@ -7,6 +7,7 @@ import "./FollowerList.css";
 function FollowersList() {
   const { username } = useParams();
   const [followers, setFollowers] = useState([]);
+  const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
 
   useEffect(() => {
     const fetchFollowers = async () => {
@@ -15,7 +16,7 @@ function FollowersList() {
           `https://api.github.com/users/${username}/followers`,
           {
             headers: {
-              Authorization: `Bearer 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`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -25,7 +26,7 @@ function FollowersList() {
               `https://api.github.com/users/${follower.login}`,
               {
                 headers: {
-                    Authorization: `Bearer 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`,
+                    Authorization: `Bearer ${token}`,
                   },
               }
             );

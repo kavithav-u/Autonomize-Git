@@ -7,6 +7,7 @@ import './FollowerRepositoryList.css';
 function FollowerRepositoryList() {
   const { followerUsername } = useParams();
   const [repositories, setRepositories] = useState([]);
+  const token = import.meta.env.REACT_APP_GITHUB_TOKEN;
 
   useEffect(() => {
     const fetchRepositories = async () => {
@@ -15,7 +16,7 @@ function FollowerRepositoryList() {
           `https://api.github.com/users/${followerUsername}/repos`,
           {
             headers: {
-              Authorization: `Bearer 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`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
