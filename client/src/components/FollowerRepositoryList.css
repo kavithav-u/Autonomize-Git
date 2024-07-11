@@ -1,0 +1,39 @@
+/* client/src/components/FollowerRepositoryList.css */
+
+.centered-repositories-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dfdfdf;
+    width: 100%; /* Adjust width as needed */
+    height: 100vh; /* Optional: Full viewport height */
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  .repositories-container {
+    width: 70%; /* Adjust width of inner container */
+    color: black; /* Adjust text color */
+  }
+  
+  .repositories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-gap: 20px; /* Adjust gap between grid items */
+  }
+  
+  .repo-item {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .repo-item a {
+    text-decoration: none;
+    color: #007bff; /* Adjust link color */
+  }
+  
+  .repo-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

@@ -1,0 +1,88 @@
+/* client/src/assets/FollowersList.css */
+
+.followers-container {
+    padding: 40px;
+  }
+  
+  .followers-container h2 {
+    text-align:center; 
+    font-size:40px; 
+    text-transform:uppercase; 
+    color:red; 
+    letter-spacing:1px;
+    font-family:"Playfair Display", serif; 
+    font-weight:400;
+  }
+  .followers-container h2 span {
+    margin-top: 5px;
+      font-size:15px; text-color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+      text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: 27px 0;
+      grid-gap: 20px;
+      align-items: center;
+  }
+  
+  .followers-container h2 span:after,.followers-container h2 span:before {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      height: 5px;
+    background-color:#f8f8f8;
+  }
+  .followers-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .follower-item {
+    position: relative;
+    width: 35%;
+    margin: 10px;
+    background-color: #eeeeee;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align all content */
+  }
+  
+  .follower-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .follower-item .info {
+    text-align: center; /* Center align text */
+  }
+  .follower-item .info p {
+    margin: 0;
+    font-size: 16px;
+    text-transform: capitalize; /* Capitalize username */
+    font-weight: bold; /* Bold username */
+  }
+  .follower-item .counts {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%; /* Ensures full width */
+  }
+  
+  .follower-item .counts p {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  .follower-item:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
